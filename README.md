@@ -3,7 +3,7 @@
 **Gulper is Gulp-based static webpage generator.** It includes HTML boilerplate, not-so-minimal CSS, and some JS scripts for kickstarting web projects. It also includes _Documentation_ template.
 
 Gulper does:
-+ Live reloading browser
++ Live reloading browser yeah
 + Compile kit (http://incident57.com/codekit/help.html#kit) to HTML
 + Compile SCSS to CSS
 + Autoprefix CSS to support last 2 versions
