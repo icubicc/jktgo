@@ -1,0 +1,46 @@
+.page-section {
+	background-color: $white;
+	border: 1px solid $color-primary;
+	padding: 1.5em 1em;
+	
+	@include breakpoint(creeper) {
+		padding: 1.5em;
+	}
+	
+	.entry-header {
+		border-bottom: 1px solid $shade;
+		margin-bottom: 1.5em;
+		padding-bottom: 1.5em;
+	}
+	
+	.section-title {
+		position: relative;
+		top: -1.5rem;
+	}
+}
+
+.tab-section {
+	
+	.tab-links {
+		
+		.conjunction {
+			text-transform: none;
+		}
+		
+		.keyword {
+			color: $color-accent;
+		}
+	}
+	
+	.tab-content {
+		padding: 1.5em 1em;
+		
+		@include breakpoint(creeper) {
+			padding: 1.5em;
+		}
+		
+		&.listings-section {
+			padding: 1em;
+		}
+	}
+}

@@ -1,0 +1,38 @@
+div.wpcf7 {
+	margin-bottom: 1.5em;
+	
+	&:last-child {
+		margin-bottom: 0;
+	}
+	
+	p {
+		margin-bottom: 1em;
+		
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	
+	label {
+		display: block;
+		margin-bottom: 0.25em;
+	}
+	
+	textarea {
+		height: 8em;
+	}
+}
+
+.wpcf7-form-control-wrap {
+	display: block;
+	width: 100%;
+	
+	> input[type="email"],
+	> input[type="password"],
+	> input[type="search"],
+	> input[type="text"],
+	> input[type="url"],
+	> textarea {
+		width: 100%;
+	}
+}

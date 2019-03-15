@@ -1,0 +1,122 @@
+.gallery-content {
+
+	> .inner {
+		max-width: none;
+		padding: 0;
+	}
+}
+
+.gallery-section {
+	padding: 1px;
+
+	img {
+		width: 100%;
+	}
+
+	.gallery-post,
+	.gallery-image {
+		float: left;
+		overflow: hidden;
+		padding: 1px;
+		position: relative;
+		width: 50%;
+
+		@include breakpoint(creeper) {
+			width: 33.333333333%;
+		}
+
+		@include breakpoint(crawler) {
+			width: 25%;
+		}
+
+		@include breakpoint(jumper) {
+			width: 20%;
+		}
+
+		@include breakpoint(flyer) {
+			width: 16.666666667%;
+		}
+
+		@include breakpoint(demigod) {
+			width: 14.285714286%;
+		}
+
+		@include breakpoint(god) {
+			width: 11.111111111%;
+		}
+
+		&.backlink {
+			text-align: center;
+
+			a {
+				background-color: $color-700;
+				color: $color-primary;
+				font-size: 0.875em;
+				height: 0;
+				line-height: 0;
+				padding: 50% 0;
+				text-transform: uppercase;
+				width: 100%;
+
+				&:hover,
+				&:focus {
+					text-decoration: none;
+				}
+			}
+		}
+
+		a {
+			display: block;
+			position: relative;
+
+			&:before {
+				content: "";
+				bottom: 0;
+				left: 0;
+				position: absolute;
+				right: 0;
+				top: 0;
+				transition: all 0.3s $ease;
+				z-index: 1;
+			}
+
+			&:hover {
+
+				&:before {
+					box-shadow: inset 0 0 0 4px $color-primary;
+				}
+
+				.entry-header {
+					bottom: 0;
+				}
+			}
+		}
+	}
+
+	.gallery-images {
+
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+	}
+
+	.entry-header {
+		background-color: $color-primary;
+		bottom: 101%;
+		margin: 0;
+		padding: 0.5em;
+		position: absolute;
+		transition: all 0.2s $ease;
+		width: 100%;
+	}
+
+	.entry-title {
+		color: $color-700;
+		font-size: 0.875em;
+		font-weight: 700;
+		margin: 0;
+		text-align: center;
+	}
+}

@@ -1,0 +1,108 @@
+.site-footer {
+	background-color: $color-primary-dark;
+	color: $color-700;
+	position: relative;
+	z-index: 9;
+
+	@include breakpoint(runner) {
+		padding-left: 14em;
+	}
+
+	> .inner {
+		padding: 1em;
+
+		@include breakpoint(creeper) {
+			padding: 1.5em;
+		}
+	}
+
+	.copyright {
+		font-size: 0.75em;
+		margin: 0;
+	}
+
+	a {
+		color: $color-700;
+	}
+}
+
+.footer-nav {
+	margin-bottom: 0.25em;
+
+	li {
+		display: inline-block;
+
+		&:after {
+			content: " |";
+			color: $shade-light;
+		}
+
+		&:last-child {
+
+			&:after {
+				content: "";
+			}
+		}
+	}
+
+	a {
+		font-size: 0.875em;
+		font-weight: 700;
+
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+		}
+	}
+}
+
+.ad-floating {
+	background-color: $shade-light;
+	bottom: 0;
+	left: 0;
+	position: fixed;
+	transition: all 0.2s $ease;
+	width: 100%;
+	z-index: 9;
+
+	&.hidden {
+		display: block;
+		opacity: 0;
+		pointer-events: none;
+		transform: translateY(90px);
+	}
+
+	img {
+		height: auto !important;
+	}
+
+	.inner {
+		display: block;
+		margin: 0 auto;
+		max-width: 728px;
+		position: relative;
+		width: 100%;
+	}
+
+	.close {
+		background-color: $shade-strong;
+		bottom: 100%;
+		color: $white;
+		font-size: 0.75em;
+		line-height: 1;
+		padding: 0.25rem 0.5rem;
+		position: absolute;
+		right: 0;
+
+		&:hover,
+		&:focus {
+			background-color: $color-accent;
+			text-decoration: none;
+		}
+
+		.word {
+			position: relative;
+			top: -1px;
+		}
+	}
+}

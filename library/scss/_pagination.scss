@@ -1,0 +1,89 @@
+.walker-pagination,
+.woocommerce-pagination {
+	clear: both;
+	margin-top: 2em;
+
+	ul {
+		@include clearfix;
+	}
+
+	li {
+		float: left;
+		margin-bottom: 0.25em;
+		margin-right: 0.25em;
+
+		&:empty {
+			display: none;
+		}
+
+		a,
+		.current {
+			background-color: $color-primary;
+			color: $color-700;
+			display: block;
+			min-width: 2em;
+			padding: 0.25em 0.5em;
+			position: relative;
+			text-align: center;
+		}
+
+		a {
+			background-color: $color-700;
+			color: $color-primary;
+			text-decoration: none;
+			transition: all 0.2s $ease;
+
+			&:hover,
+			&:focus {
+				background-color: $color-primary-dark;
+				color: $color-700;
+			}
+		}
+
+		i {
+			display: inline-block;
+		}
+	}
+}
+
+.blog-pagination {
+	border-top: 1px solid $shade;
+	margin-top: 1.75em;
+	padding-top: 1.5em;
+}
+
+.infinite-pagination {
+	margin-top: 24px;
+	text-align: center;
+
+	.loader {
+		background-color: $color-800;
+		color: $white;
+		display: inline-block;
+		letter-spacing: 0.02em;
+		padding: 8px 16px;
+		text-transform: uppercase;
+		transition: all 0.2s ease-out;
+
+		&:hover,
+		&:focus {
+			background-color: $color-primary;
+			color: $color-800;
+			text-decoration: none;
+		}
+	}
+}
+
+.prev-next {
+	border-top: 1px solid $shade;
+	margin-top: 2em;
+	padding-top: 2em;
+
+	.prev-link {
+		float: left;
+	}
+
+	.next-link {
+		float: right;
+	}
+}

@@ -1,0 +1,271 @@
+.blog-heading {
+	background-color: $black;
+	background-image: url("images/bg-blog.jpg");
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	background-size: cover;
+	color: $white;
+	margin: -1em -1em 1em;
+	padding: 32px 32px 48px;
+	text-align: center;
+	width: 100%;
+	width: calc(100% + 2em);
+
+	@include breakpoint(creeper) {
+		margin: -1.5em -1.5em 1.5em;
+		width: calc(100% + 3em);
+	}
+
+	@include breakpoint(walker) {
+		margin: -1em -1em 1em;
+		width: calc(100% + 2em);
+	}
+
+	@include breakpoint(runner) {
+		margin: -1.5em -1.5em 1.5em;
+		width: calc(100% + 3em);
+	}
+
+	.title {
+		font-size: 2em;
+		margin-bottom: 0;
+		text-transform: uppercase;
+
+		@include breakpoint(creeper) {
+			font-size: 3em;
+		}
+
+		@include breakpoint(walker) {
+			font-size: 4em;
+		}
+	}
+
+	.tagline {
+		margin-bottom: 16px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	.categories {
+		margin-top: 32px;
+
+		.legend {
+			margin-bottom: 4px;
+		}
+
+		ul {
+			font-size: 0;
+			list-style: none;
+			margin: 0 0 -4px -4px;
+			padding: 0;
+		}
+
+		.cat-item {
+			display: inline-block;
+			font-size: 14px;
+			margin: 0 0 4px 4px;
+
+			a {
+				background-color: $color-primary;
+				color: $black;
+				display: block;
+				font-weight: 700;
+				padding: 2px 8px;
+				transition: all 0.2s ease;
+
+				&:hover,
+				&:focus {
+					background-color: $color-primary-darker;
+					text-decoration: none;
+				}
+			}
+
+			&.cat-item-current {
+
+				a {
+					background-color: $color-accent;
+					color: $white;
+				}
+			}
+		}
+	}
+}
+
+.blog-single-section {
+	background-color: $white;
+	border: 1px solid $shade;
+	box-shadow: 0 0 4px $shade, 0 0 12px $shade;
+	padding: 1em;
+	position: relative;
+
+	@include breakpoint(creeper) {
+		padding: 1.5em;
+	}
+
+	@include breakpoint(crawler) {
+		padding: 2em;
+	}
+
+	&:before {
+		content: "";
+		background-color: $color-primary;
+		height: 4px;
+		left: 40%;
+		position: absolute;
+		right: 40%;
+		top: 0;
+	}
+
+	.entry-header,
+	.page-header {
+		border-bottom: 1px solid $shade;
+		margin-bottom: 1em;
+		padding-bottom: 1em;
+		text-align: center;
+
+		@include breakpoint(crawler) {
+			margin-bottom: 2em;
+			padding-bottom: 2em;
+		}
+	}
+
+	.single-title {
+		font-size: 1.75em;
+		font-weight: 700;
+		text-transform: none;
+
+		@include breakpoint(creeper) {
+			font-size: 2em;
+		}
+	}
+}
+
+.jp-relatedposts {
+	@include clearfix;
+
+	.jp-relatedposts-headline {
+		margin-bottom: 12px;
+		text-transform: uppercase;
+	}
+
+	.jp-relatedposts-items {
+		margin: -8px;
+	}
+
+	.jp-relatedposts-post {
+		float: left;
+		padding: 8px;
+		width: 33.333333333%;
+
+		&:nth-child(3n+1) {
+			clear: both;
+		}
+	}
+
+	.jp-relatedposts-post-img {
+		margin-bottom: 4px;
+	}
+
+	.jp-relatedposts-post-title {
+		margin-bottom: 2px;
+	}
+
+	.jp-relatedposts-post-excerpt {
+		display: none;
+	}
+
+	.jp-relatedposts-post-date,
+	.jp-relatedposts-post-context {
+		font-size: 0.875em;
+		margin-bottom: 0;
+	}
+
+	.jp-relatedposts-post-date {
+		color: $color-text-light;
+	}
+}
+
+.blog-newsletter {
+	align-items: center;
+	background-color: $color-primary;
+	display: flex;
+	flex: 1 1 auto;
+	flex-direction: column;
+	justify-content: center;
+	padding: 24px;
+	text-align: center;
+
+	.icon {
+		margin-bottom: 12px;
+	}
+
+	.title {
+		font-size: 24px;
+		font-weight: 400;
+		line-height: 1;
+		margin-bottom: 16px;
+		text-transform: uppercase;
+
+		@include breakpoint(jumper) {
+			font-size: 30px;
+		}
+
+		.highlight {
+			display: block;
+			font-size: 36px;
+			font-weight: 700;
+
+			@include breakpoint(jumper) {
+				font-size: 48px;
+			}
+		}
+	}
+
+	.input,
+	.button {
+		text-align: center;
+		width: 100%;
+	}
+
+	.input {
+		border-color: transparent;
+		box-shadow: none;
+		margin-bottom: 4px;
+	}
+
+	.button {
+
+		&:hover,
+		&:focus {
+			background-color: lighten($color-700, 8%);
+			color: $color-primary;
+		}
+	}
+}
+
+.blog-social {
+	background-color: $color-primary-dark;
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 8px !important;
+		text-align: center;
+	}
+
+	li {
+		display: inline-block;
+	}
+
+	a {
+		opacity: 0.5;
+		transition: all 0.2s ease;
+
+		&:hover,
+		&:focus {
+			opacity: 1;
+		}
+	}
+}

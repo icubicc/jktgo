@@ -1,0 +1,147 @@
+* {
+	box-sizing: border-box;
+
+	&:after,
+	&:before {
+		box-sizing: border-box;
+	}
+}
+
+html,
+body {
+	height: 100%;
+}
+
+audio,
+canvas,
+iframe,
+img,
+video {
+	vertical-align: middle;
+}
+
+img {
+	height: auto;
+	max-width: 100%;
+}
+
+nav {
+
+	ol,
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+
+.wrap {
+	max-width: 80em;
+}
+
+.search-bar {
+
+	@include breakpoint(runner) {
+		margin-left: 14em;
+	}
+}
+
+.site-header {
+	position: relative;
+	z-index: 10;
+
+	@include breakpoint(runner) {
+		height: 100%;
+		left: 0;
+		position: fixed;
+		top: 0;
+		width: 14em;
+	}
+
+	.blog-social {
+		background-color: transparent;
+		display: none;
+		margin-top: 24px;
+
+		@include breakpoint(runner) {
+			display: block;
+		}
+
+		ul {
+			padding: 0 !important;
+		}
+	}
+}
+
+.content {
+	flex: 1;
+
+	@include breakpoint(runner) {
+		margin-left: 14em;
+	}
+
+	> .inner {
+		padding: 1em;
+
+		@include breakpoint(creeper) {
+			padding: 1.5em;
+		}
+
+		@include breakpoint(walker) {
+			padding: 1em;
+		}
+
+		@include breakpoint(runner) {
+			padding: 1.5em 1.5em 3em;
+		}
+	}
+}
+
+.main {
+	width: 100%;
+
+	@include breakpoint(walker) {
+		float: left;
+		width: 62.5%;
+		width: calc(100% - 16.5em);
+	}
+
+	@include breakpoint(jumper) {
+		width: calc(100% - 20em);
+	}
+
+	@include breakpoint(flyer) {
+		width: calc(100% - 22em);
+	}
+
+	&.fullscreen {
+		width: 100%;
+	}
+}
+
+.sidebar {
+	margin-top: 1.5em;
+	width: 100%;
+
+	@include breakpoint(walker) {
+		display: block;
+		float: right;
+		margin-top: 0;
+		width: 33.333333333%;
+		width: calc(15em);
+	}
+
+	@include breakpoint(jumper) {
+		width: calc(18em);
+	}
+
+	@include breakpoint(flyer) {
+		width: calc(20em);
+	}
+}

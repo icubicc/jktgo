@@ -1,0 +1,304 @@
+.site-header {
+	background-color: $color-primary;
+
+	.inner {
+		padding: 1em;
+		position: relative;
+
+		@include breakpoint(walker) {
+			padding: 1.5em;
+		}
+	}
+
+	.logo {
+		display: inline-block;
+		height: 3em;
+
+		@include breakpoint(runner) {
+			display: block;
+			height: auto;
+			padding: 0 0.5em;
+			text-align: center;
+		}
+
+		img {
+			display: inline-block;
+			max-height: 100%;
+
+			@include breakpoint(runner) {
+				max-height: none;
+				max-width: 8em;
+			}
+		}
+	}
+}
+
+.main-nav {
+	margin-top: 0;
+	transition: all 0.3s $ease !important;
+
+	@include breakpoint(runner) {
+		margin: 1.5em 0 0;
+		width: auto;
+	}
+
+	.js & {
+		clear: both;
+		clip: rect(0 0 0 0);
+		display: block;
+		max-height: 0;
+		overflow: hidden;
+		position: absolute;
+		zoom: 1;
+
+		@include breakpoint(runner) {
+			clear: none;
+			max-height: none;
+			position: relative;
+		}
+	}
+
+	&.opened {
+		margin-top: 1em;
+		max-height: 9999px;
+	}
+
+	.disable-pointer-events {
+	  pointer-events: none !important;
+	}
+
+	.items {
+
+		+ .items {
+			padding-top: 32px;
+			position: relative;
+
+			&:before {
+				content: "";
+				background-color: $color-700;
+				height: 1px;
+				left: 0;
+				position: absolute;
+				top: 17px;
+				width: 100%;
+			}
+		}
+	}
+
+	li {
+		transition: all 0.2s ease-out;
+
+		@include breakpoint(runner) {
+			width: auto;
+		}
+
+		&.current-menu-item,
+		&.current_page_item,
+		&.current_page_parent {
+
+			a {
+				background-color: $color-700;
+				color: $color-primary;
+			}
+		}
+	}
+
+	a {
+		color: $color-700;
+		display: block;
+		font-family: $display;
+		font-size: 0.875em;
+		font-weight: 400;
+		line-height: 1rem;
+		padding: 9px 8px;
+		position: relative;
+		transition: all 0.3s $ease;
+		text-align: center;
+		text-transform: uppercase;
+
+		&:hover,
+		&:focus {
+			background-color: $color-primary-darker;
+			text-decoration: none;
+		}
+
+		.badge {
+			background-color: lighten($color-accent, 8%);
+			color: $white;
+			font-size: 0.75em;
+			font-weight: 700;
+			line-height: 1;
+			margin-left: 0.5em;
+			padding: 0.125em 0.375em 0.25em;
+			position: absolute;
+			top: 0.5rem;
+		}
+	}
+
+	.login {
+		margin-bottom: 1.5rem;
+
+		a {
+			background-color: transparent;
+			border: 1px solid $shade-medium;
+			color: $shade-medium;
+			font-weight: 700;
+			padding-bottom: 6px;
+			padding-top: 6px;
+
+			&:hover,
+			&:focus {
+				color: $shade-strong;
+
+				.icon-group {
+					fill: $shade-strong;
+				}
+			}
+		}
+
+		#icon-login,
+		.user-avatar {
+			display: inline-block;
+			height: 24px;
+			margin-right: 0.125em;
+			vertical-align: middle;
+			width: 24px;
+		}
+
+		.avatar {
+			border-radius: 50%;
+		}
+
+		.icon-group {
+			fill: $shade-medium;
+			transition: all 0.3s $ease;
+		}
+
+		.label {
+			display: inline-block;
+			line-height: 1.5rem;
+			max-width: calc(100% - 3em);
+			overflow: hidden;
+			text-overflow: ellipsis;
+			vertical-align: middle;
+		}
+	}
+
+	.children {
+		display: none;
+	}
+}
+
+.nav-toggle {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-touch-callout: none;
+	user-select: none;
+	background: $color-700 url("library/images/hamburger.gif") no-repeat 50% 50%;
+	height: 5em;
+	overflow: hidden;
+	position: absolute;
+	right: 1em;
+	text-indent: -999em;
+	top: 0;
+	width: 25px;
+
+	@include breakpoint(walker) {
+		height: 6em;
+		right: 1.5em;
+	}
+
+	@include breakpoint(runner) {
+		display: none;
+	}
+
+	@include breakpoint(watcher) {
+		background-image: url("library/images/hamburger@2x.gif");
+		background-size: 100px 100px;
+	}
+
+	&:focus {
+		outline: 0;
+	}
+}
+
+.site-switcher {
+	position: relative;
+
+	&:hover {
+
+		~ li {
+			opacity: 0.2;
+		}
+
+		.site-switcher-link {
+			text-indent: -48px;
+		}
+
+		.site-switcher-popover {
+			display: block;
+			opacity: 1;
+			pointer-events: auto;
+			z-index: 2;
+		}
+	}
+
+	@at-root {
+		.site-switcher-link {
+			background-color: $shade;
+			background-image: url(library/images/icon-switch.svg);
+			background-position: calc(100% - 8px) center;
+			background-repeat: no-repeat;
+			background-size: 20px;
+			transition: all 0.1s ease-out;
+		}
+
+		.site-switcher-popover {
+			background-color: $color-800;
+			color: $white;
+			left: 0;
+			opacity: 0;
+			pointer-events: none;
+			position: absolute;
+			text-align: left;
+			top: 0;
+			transition: all 0.2s ease-out 0.1s;
+			min-width: 100%;
+			z-index: -1;
+
+			.switch {
+
+				&.switch-current {
+					pointer-events: none;
+
+					.caption {
+						opacity: 1;
+					}
+				}
+
+				.link {
+					color: $white;
+					display: flex;
+					justify-content: space-between;
+
+					&:hover,
+					&:focus {
+						background-color: $color-600;
+
+						.caption {
+							opacity: 1;
+						}
+					}
+				}
+
+				.caption {
+					color: $color-400;
+					font-size: 10px;
+					margin-left: 8px;
+					opacity: 0;
+					text-transform: none;
+					transition: all 0.2s ease-out;
+				}
+			}
+		}
+	}
+}

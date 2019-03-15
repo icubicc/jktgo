@@ -1,0 +1,326 @@
+.mfp-zoom {
+
+	&.mfp-bg {
+		opacity: 0;
+		transition: all 0.3s $ease;
+
+		&.mfp-ready {
+			opacity: 0.88;
+		}
+
+		&.mfp-removing {
+			opacity: 0;
+		}
+	}
+
+	&.mfp-ready {
+
+		.modal,
+		.popup {
+			opacity: 1;
+			transform: scale(1);
+		}
+	}
+
+	&.mfp-removing {
+
+		.modal,
+		.popup {
+			opacity: 0;
+			transform: scale(0.8);
+		}
+	}
+
+	.modal,
+	.popup {
+		opacity: 0;
+		transform: scale(0.8);
+		transition: all 0.3s $bounce;
+	}
+}
+
+.modal {
+	background-color: $color-primary;
+	background-image: url("library/images/bg-modal.png");
+	margin: 0 auto;
+	max-width: 60em;
+	padding: 0.5em;
+	position: relative;
+
+	@include breakpoint(creeper) {
+		padding: 1.5em;
+	}
+
+	.mfp-close {
+		background-image: url("library/images/icon-modal-close.png");
+		background-repeat: no-repeat;
+		background-position: center center;
+		color: transparent;
+		font-size: 0;
+		height: 1rem;
+		opacity: 0.6;
+		right: 0;
+		top: -1.5rem;
+		width: 1rem;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+}
+
+.modal-title {
+	font-size: 1.5em;
+	font-weight: 400;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.modal-login {
+
+	> .inner {
+		border: 4px solid $color-700;
+		color: $color-700;
+		padding: 1em;
+		text-align: center;
+
+		@include breakpoint(creeper) {
+			padding: 1.5em;
+		}
+	}
+
+	.splash-form {
+
+		+ .splash-form {
+			border-color: $color-700;
+		}
+
+		&.splash-login-facebook {
+			border-color: transparent;
+
+			&:before,
+			&:after {
+				background-color: $color-700;
+			}
+
+			.conjunction {
+				color: $color-700;
+			}
+		}
+
+		button,
+		input[type="submit"] {
+			background-color: $color-700;
+			color: $white;
+
+			&:hover,
+			&:focus {
+				background-color: lighten($color-700, 8%);
+				color: $white;
+			}
+		}
+	}
+}
+
+.popup-christmas {
+	background-color: #B10615;
+	background-image: url("library/images/christmas/bg.jpg");
+	background-position: center;
+	background-size: cover;
+	color: $white;
+	font-family: $serif;
+	letter-spacing: 0.1em;
+	margin: 0 auto;
+	max-width: 800px;
+	padding: 32px 24px;
+	text-align: center;
+	text-transform: uppercase;
+
+	@include breakpoint(creeper) {
+		padding: 48px;
+	}
+
+	@include breakpoint(walker) {
+		padding: 48px 96px;
+	}
+
+	.mfp-close {
+		display: none;
+	}
+
+	.logo {
+		display: block;
+		margin: 0 auto 12px;
+	}
+
+	.title {
+		display: block;
+		margin: 0 auto 16px;
+		max-width: 480px;
+		width: 100%;
+	}
+
+	.form {
+		margin-bottom: 6px;
+
+		.label {
+			display: block;
+			line-height: 1;
+			font-size: 16px;
+			margin-bottom: 6px;
+
+			@include breakpoint(creeper) {
+				font-size: 24px;
+			}
+
+			@include breakpoint(crawler) {
+				font-size: 28px;
+			}
+		}
+
+		.input {
+			box-shadow: none;
+			max-width: 360px;
+			padding-bottom: 4px;
+			padding-top: 4px;
+			text-align: center;
+			text-transform: uppercase;
+			vertical-align: middle;
+			width: 100%;
+		}
+
+		.button {
+			max-width: 360px;
+			padding-bottom: 5px;
+			padding-top: 5px;
+			text-transform: uppercase;
+			vertical-align: middle;
+			width: 100%;
+
+			@include breakpoint(crawler) {
+				width: auto;
+			}
+		}
+	}
+
+	.sponsors {
+
+		.headnote {
+			font-size: 20px;
+			font-weight: 400;
+			line-height: 1;
+			margin-bottom: 0;
+
+			@include breakpoint(creeper) {
+				font-size: 30px;
+			}
+
+			@include breakpoint(crawler) {
+				font-size: 36px;
+			}
+		}
+
+		.footnote {
+			font-size: 10px;
+		}
+
+		.list {
+			list-style: none;
+			margin: 0 auto;
+			max-width: 480px;
+			padding: 0;
+		}
+
+		.item {
+			display: inline-block;
+			margin: 0 2px;
+			vertical-align: middle;
+		}
+	}
+}
+
+.popup-wtf {
+	background-color: #1b6dfd;
+	background-image: linear-gradient(to bottom, #fdc268, #ca71cd, #1b6dfd);
+	margin: 0 auto;
+	max-width: 800px;
+	padding: 12px;
+	text-align: center;
+
+	@include breakpoint(crawler) {
+		padding: 24px;
+	}
+
+	.mfp-close {
+		display: none;
+	}
+
+	.inner {
+		border-width: 12px;
+		border-style: solid;
+		border-image: linear-gradient(to bottom, #0FE1AF, #F6C781) 1;
+		padding: 108px 16px 24px;
+		position: relative;
+
+		@include breakpoint(crawler) {
+			border-width: 16px;
+			padding: 64px;
+		}
+	}
+
+	.logos {
+		display: flex;
+		justify-content: space-between;
+		left: 16px;
+		position: absolute;
+		right: 16px;
+		top: 16px;
+	}
+
+	.pophead {
+		margin-bottom: 8px;
+	}
+
+	.form {
+		color: $white;
+		margin: 0 auto;
+		max-width: 400px;
+
+		.label {
+			display: inline-block;
+			font-size: 22px;
+			font-weight: 700;
+			line-height: 1.2;
+			margin-bottom: 8px;
+			text-transform: uppercase;
+		}
+
+		.input {
+			display: inline-block;
+			vertical-align: middle;
+			width: 100%;
+
+			@include breakpoint(creeper) {
+				width: calc(100% - 92px);
+			}
+		}
+
+		.button {
+			display: inline-block;
+			height: 34px;
+			text-transform: uppercase;
+			vertical-align: middle;
+			width: 100%;
+
+			@include breakpoint(creeper) {
+				width: auto;
+			}
+		}
+
+		.caption {
+			line-height: 1.25;
+			margin-top: 12px;
+			text-transform: uppercase;
+		}
+	}
+}

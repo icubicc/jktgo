@@ -1,0 +1,35 @@
+.display-ads {
+
+	> div {
+		overflow: hidden;
+		width: 100% !important;
+		height: auto !important;
+		padding: 8px !important;
+		border: solid 4px #FFEC00 !important;
+	}
+
+	a {
+
+		> div {
+			margin-right: 8px;
+			max-width: 160px;
+			width: 30% !important;
+			height: auto !important;
+
+			img:not(.blank-img) {
+				width: 100% !important;
+			}
+
+			+ div {
+				width: auto !important;
+				overflow: hidden;
+				float: none !important;
+				margin: 0 !important;
+				max-width: none !important;
+				font-size: 13px !important;
+				line-height: 1.25 !important;
+				text-shadow: none !important;
+			}
+		}
+	}
+}

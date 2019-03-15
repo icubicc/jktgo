@@ -1,0 +1,58 @@
+/*!
+Theme Name: JKTGO
+Theme URI: http://jktgo.co/
+Description: This site is infected with Walker. Switching to another theme is not recommended since this theme is definitely more awesome.
+Author: ICUBIC
+Author URI: http://icubic.co.id/
+Version: 2.1
+Tags: responsive, sass, woocommerce
+*/
+
+@import "mixins";
+
+@import "normalize";
+@import "global";
+@import "typography";
+@import "form";
+
+@import "font-awesome";
+@import "scroller";
+@import "selecter";
+@import "royalslider";
+@import "magnific-popup";
+@import "slabtext";
+
+@import "woocommerce";
+
+@import "layout";
+@import "entry";
+@import "comments";
+@import "pagination";
+@import "search";
+
+@import "index";
+@import "listings";
+@import "events";
+@import "pass";
+@import "blog";
+@import "gallery";
+
+@import "page";
+@import "post";
+@import "contact";
+@import "attachment";
+@import "account";
+
+@import "bingo";
+
+@import "header";
+@import "footer";
+@import "sidebar";
+@import "popup";
+@import "splash";
+
+@import "keyframes";
+
+@import "mtburn";
+
+@media print { @import "print"; }

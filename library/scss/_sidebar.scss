@@ -1,0 +1,187 @@
+.sidebar {
+
+	ol,
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+.widget {
+	background-color: $white;
+	border: 1px solid $color-primary;
+	display: none;
+	padding: 1em;
+
+	@include breakpoint(walker) {
+		display: block;
+	}
+
+	+ .widget {
+		margin-top: 1em;
+
+		@include breakpoint(runner) {
+			margin-top: 1.5em;
+		}
+	}
+}
+
+.persistant-widget {
+	display: block;
+}
+
+.widget-title {
+	@include ellipsis;
+	background-color: $color-primary;
+	color: $color-700;
+	font-size: 0.875em;
+	line-height: 1.125rem;
+	margin: -1rem auto 1rem;
+	padding: 0.5em;
+	text-align: center;
+	text-transform: uppercase;
+	width: 88%;
+}
+
+.newsletter-widget {
+	background-color: $color-primary;
+	border: 0;
+	padding: 0;
+}
+
+.social-widget {
+	background-color: $color-primary-dark;
+	border: 0;
+	margin-top: 0 !important;
+	padding: 1em;
+
+	ul {
+		text-align: center;
+	}
+
+	li {
+		display: inline-block;
+
+		+ li {
+			margin-left: 0.25em;
+		}
+	}
+
+	a {
+		opacity: 0.6;
+		transition: all 0.2s $ease;
+
+		&:hover,
+		&:focus {
+			opacity: 1;
+			text-decoration: none;
+		}
+	}
+}
+
+.ad-widget {
+	background-color: transparent;
+	border: 0;
+	float: left;
+	width: 50%;
+	width: calc(50% - 0.5em);
+
+	@include breakpoint(walker) {
+		float: none;
+		width: 100%;
+	}
+
+	&.ad-widget-one {
+		padding: 0;
+	}
+
+	&.ad-widget-two {
+		float: right;
+		padding: 0;
+
+		@include breakpoint(walker) {
+			float: none;
+		}
+	}
+
+	img {
+		height: auto !important;
+		width: 100%;
+	}
+}
+
+.review-widget,
+.popular-widget {
+	box-shadow: -4px -4px 0 $color-primary;
+	margin-left: 4px;
+	text-align: center;
+
+	.listing-review {
+		color: $color-text;
+		font-size: 0.875em;
+		line-height: 1.25rem;
+	}
+}
+
+.popular-widget {
+
+	ul {
+		margin: -0.5em;
+	}
+
+	li {
+		float: left;
+		padding: 0.5em;
+		width: 33.333333333%;
+
+		+ li {
+			margin-top: 0;
+
+			@include breakpoint(walker) {
+				margin-top: 0.5em;
+			}
+		}
+
+		@include breakpoint(walker) {
+			width: 100%;
+		}
+	}
+}
+
+.widget_categories,
+.widget_tag_cloud {
+	@include clearfix;
+	box-shadow: -4px -4px 0 $color-primary;
+	margin-left: 4px;
+
+	li {
+		float: left;
+		margin: 0 0.25em 0.25em 0;
+	}
+
+	a {
+		background-color: $color-700;
+		color: $color-primary;
+		display: block;
+		font-size: 0.75em;
+		padding: 0.25em 0.5em;
+		transition: all 0.2s $ease;
+
+		&:hover,
+		&:focus {
+			background-color: $color-primary;
+			color: $color-700;
+			text-decoration: none;
+		}
+	}
+}
+
+.widget_tag_cloud {
+
+	a {
+		float: left;
+		font-size: 0.75em !important;
+		margin: 0 0.25rem 0.25rem 0;
+	}
+}

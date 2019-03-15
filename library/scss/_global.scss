@@ -1,0 +1,138 @@
+.blank-img {
+	border: 0 !important;
+	outline: 0 !important;
+}
+
+.browsehappy {
+	background: $color-100;
+	color: $color-700;
+	margin: 0.25em 0;
+	padding: 0.25em 0;
+}
+
+.clearfix {
+
+	&:before,
+	&:after {
+		content: "";
+		display: table;
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+
+.hidden {
+    display: none;
+    visibility: hidden;
+}
+
+.invisible {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+.walking {
+	position: relative;
+}
+
+.walking:before {
+	content: "";
+	display: block;
+	background-color: $tint-medium;
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 9;
+}
+
+.walking:after {
+	content: "";
+	animation: walker-spin 2s infinite linear;
+	border-left: 4px solid $shade-medium;
+	border-bottom: 4px solid $shade-medium;
+	border-right: 4px solid $shade-medium;
+	border-top: 4px solid $color-primary;
+	border-radius: 100%;
+	display: block;
+	height: 2em;
+	left: 50%;
+	margin: -1em 0 0 -1em;
+	outline: 1px solid transparent;
+	position: absolute;
+	top: 50%;
+	width: 2em;
+	z-index: 10;
+}
+
+.walking.no-overlay:before {
+	content: none;
+	display: none;
+}
+
+.animation {
+	animation-duration: 0.4s;
+	animation-fill-mode: forwards;
+
+	&.delayed {
+		animation-delay: 0.4s;
+	}
+
+	&.infinite {
+		animation-iteration-count: infinite;
+	}
+
+	&.spin {
+		animation-name: walker-spin;
+	}
+
+	&.rubber {
+		animation-name: walker-rubber;
+	}
+}
+
+.scene {
+
+	.animation {
+		animation-duration: 0.25s;
+	}
+
+	.fade-in {
+		animation-name: walker-fade-in;
+	}
+
+	&.exit {
+
+		.animation {
+			animation-direction: alternate-reverse;
+		}
+	}
+}
+
+.social {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	li {
+		float: left;
+		max-width: 50%;
+
+		&.twitter {
+			margin-left: 0.75em;
+		}
+
+		iframe {
+			vertical-align: baseline;
+		}
+	}
+}

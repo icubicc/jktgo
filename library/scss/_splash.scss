@@ -1,0 +1,193 @@
+.splash {
+
+	.mfp-bg {
+		display: none;
+	}
+
+	.mfp-zoom {
+		cursor: default;
+	}
+
+	.modal-login {
+		background: none;
+
+		> .inner {
+			border-color: $white;
+		}
+
+		.splash-form {
+
+			+ .splash-form {
+				border-top: 2px solid $white;
+			}
+
+			&.splash-login-facebook {
+				border-top-color: transparent;
+
+				&:before {
+					background-color: $white;
+				}
+
+				&:after {
+					background-color: $white;
+				}
+			}
+		}
+	}
+
+	.container {
+
+		> * {
+			display: none;
+		}
+	}
+
+	.splash-content {
+		background-image: url("library/images/bg-splash.jpg");
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: cover;
+		display: flex;
+		flex: 1;
+		justify-content: center;
+
+		> .inner {
+			align-self: center;
+			color: $black;
+			text-align: center;
+		}
+	}
+}
+
+.splash-wording {
+	margin-bottom: 3em;
+
+	p {
+		font-size: 0.875em;
+		font-weight: 700;
+		margin: 0;
+		text-transform: uppercase;
+
+		+ p {
+			margin-top: 0.5rem;
+		}
+	}
+
+	.splash-title {
+		font-size: 1.5em;
+		margin-bottom: 1rem;
+
+		@include breakpoint(creeper) {
+			font-size: 1.875em;
+		}
+
+		@include breakpoint(crawler) {
+			font-size: 2.25em;
+		}
+	}
+}
+
+.splash-form {
+	margin: 0 auto;
+	width: 100%;
+
+	@include breakpoint(walker) {
+		width: 80%;
+	}
+
+	+ .splash-form {
+		border-top: 2px solid $white;
+		margin-top: 1.5em;
+		padding-top: 1.5em;
+	}
+
+	&.splash-login-facebook {
+		border-top-color: transparent;
+		position: relative;
+
+		&:before {
+			content: "";
+			background-color: $white;
+			height: 2px;
+			right: 0;
+			position: absolute;
+			top: -2px;
+			width: 42%;
+		}
+
+		&:after {
+			content: "";
+			background-color: $white;
+			height: 2px;
+			left: 0;
+			position: absolute;
+			top: -2px;
+			width: 42%;
+		}
+
+		.conjunction {
+			color: $white;
+			font-weight: 700;
+			left: 50%;
+			position: absolute;
+			text-transform: uppercase;
+			top: 0;
+			transform: translate(-50%, -50%);
+		}
+
+		.button {
+			background-color: $color-facebook;
+			background-image: url("library/images/icon-modal-login-facebook.png");
+			background-repeat: no-repeat;
+			background-position: 0.75em center;
+			color: $white;
+			display: inline-block;
+			padding: 0.5em 0.75em 0.5em 3em;
+
+			&:hover,
+			&:focus {
+				background-color: darken($color-facebook, 8%);
+				color: $white;
+			}
+		}
+	}
+
+	h2 {
+		font-size: 1em;
+	}
+
+	p {
+		margin: 0;
+
+		+ p {
+			margin-top: 0.5em;
+		}
+	}
+
+	input[type="text"],
+	input[type="password"] {
+		border: 0;
+		box-shadow: none;
+		font-weight: 700;
+		max-width: 30em;
+		text-align: center;
+		width: 100%;
+
+		@include breakpoint(crawler) {
+			width: 80%;
+		}
+	}
+
+	button,
+	input[type="submit"] {
+		background-color: $black;
+		color: $white;
+		text-transform: uppercase;
+
+		&:hover,
+		&:focus {
+			background-color: $color-primary;
+			color: $black;
+		}
+	}
+}

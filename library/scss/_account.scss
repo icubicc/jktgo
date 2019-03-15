@@ -1,0 +1,56 @@
+.myaccount_user {
+	@include clearfix;
+
+	p {
+		overflow: hidden;
+	}
+
+	.avatar {
+		float: left;
+		margin-right: 0.375em;
+
+		img {
+			border: 1px solid $shade;
+			border-radius: 50%;
+		}
+	}
+
+	.username {
+		display: block;
+	}
+}
+
+.myaccount_review {
+	margin-top: 1.5rem;
+
+	ol,
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.no-review {
+		background-color: $color-100;
+		padding: 1.5em;
+	}
+
+	.review {
+		border-color: $color-100;
+	}
+
+	.review-meta {
+
+		.badge {
+			margin-left: 0;
+		}
+
+		.title {
+			color: $color-text;
+		}
+	}
+
+	.ajax-pagination {
+		margin-top: 0.75em;
+	}
+}

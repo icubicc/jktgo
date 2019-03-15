@@ -1,0 +1,103 @@
+fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+button,
+input,
+textarea {
+	-webkit-font-smoothing: antialiased;
+}
+
+input,
+textarea {
+
+	&:focus {
+		outline: 0;
+	}
+}
+
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="text"],
+input[type="url"],
+textarea {
+	border: 1px solid $color-100;
+	border-radius: 0;
+	box-shadow: 2px 2px 0 $shade;
+	line-height: 1.5;
+	max-width: 100%;
+	padding: 0.25em 0.5em;
+	resize: none;
+	transition: all 0.2s $ease;
+
+	&:focus {
+		border-color: $shade-light;
+		box-shadow: none;
+	}
+}
+
+input[type="file"] {
+	cursor: pointer;
+}
+
+button,
+.button,
+a.button,
+input[type="submit"] {
+	background-color: $color-button;
+	border: 0;
+	border-radius: 0;
+	color: $color-primary;
+	display: inline-block;
+	font-weight: 700;
+	line-height: 1.5;
+	padding: 0.25em 1em;
+	position: relative;
+	transition: all 0.2s $ease;
+	vertical-align: middle;
+
+	&:hover,
+	&:focus {
+		background-color: $color-button-hover;
+		color: $color-700;
+		outline: 0;
+		text-decoration: none;
+	}
+
+	&:active {
+		background-color: $color-button-active;
+	}
+
+	&.alt {
+		background-color: $color-button-alt;
+
+		&:hover,
+		&:focus {
+			background-color: $color-button-alt-hover;
+		}
+
+		&:active {
+			background-color: $color-button-alt-active;
+		}
+	}
+
+	&.gray {
+		background-color: $color-500;
+
+		&:hover,
+		&:focus {
+			background-color: $color-700;
+		}
+
+		&:active {
+			background-color: $color-700;
+		}
+	}
+}
+
+::placeholder {
+	color: $color-500;
+}

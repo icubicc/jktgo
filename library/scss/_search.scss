@@ -1,0 +1,292 @@
+.search-bar {
+	background-color: $color-700;
+	color: $white;
+
+	.inner {
+		padding: 0.75em 0.5em;
+
+		@include breakpoint(creeper) {
+			padding: 0.75em 1em;
+		}
+	}
+
+	::placeholder {
+		color: $tint-medium;
+	}
+
+	input[type="text"] {
+		background-color: transparent;
+		border: 0;
+		box-shadow: inset 0 -1px 0 $tint-light;
+		color: $white;
+		padding: 0.25em 0;
+		width: 100%;
+	}
+
+	input[type="radio"] {
+		display: none;
+
+		+ span {
+			box-shadow: inset 0 0 0 1px $white;
+			cursor: pointer;
+			display: block;
+			font-size: 0.875em;
+			line-height: 1rem;
+			opacity: 0.4;
+			padding: 0.5rem;
+			transition: all 0.2s $ease;
+
+			&:hover {
+				box-shadow: inset 0 0 0 1px $color-primary;
+				color: $color-primary;
+				opacity: 0.6;
+			}
+		}
+
+		&:checked {
+
+			+ span {
+				box-shadow: inset 0 0 0 1px $color-primary;
+				color: $color-primary;
+				opacity: 1;
+			}
+		}
+	}
+
+	.search-box {
+
+		&.is-toggled {
+
+			.search-toggle {
+				display: block;
+			}
+		}
+
+		@include breakpoint(walker) {
+			display: flex;
+			flex-flow: row nowrap;
+		}
+	}
+
+	.search-input {
+
+		@include breakpoint(walker) {
+			flex: 1 0 auto;
+			float: left;
+			margin-right: 1em;
+		}
+	}
+
+	.search-toggle {
+		display: none;
+		margin-top: 0.75em;
+
+		@include breakpoint(walker) {
+			display: block;
+			flex: 0 0 auto;
+			margin-top: 0;
+		}
+	}
+
+	.toggle-option {
+		float: left;
+		margin-left: 0.5em;
+		text-align: center;
+		width: calc(50% - 0.25em);
+
+		@include breakpoint(crawler) {
+			width: calc(33.333333333% - 0.375em);
+		}
+
+		@include breakpoint(walker) {
+			width: auto;
+		}
+
+		&:first-child {
+			margin-left: 0;
+		}
+
+		&:nth-child(2n+1) {
+			margin-left: 0;
+
+			@include breakpoint(crawler) {
+				margin-left: 0.5em;
+			}
+		}
+
+		&:nth-child(3n+1) {
+
+			@include breakpoint(crawler) {
+				margin-left: 0;
+			}
+
+			@include breakpoint(walker) {
+				margin-left: 0.5em;
+			}
+		}
+
+		&:nth-child(n+3) {
+			margin-top: 0.5em;
+
+			@include breakpoint(crawler) {
+				margin-top: 0;
+			}
+		}
+
+		&:nth-child(n+4) {
+
+			@include breakpoint(crawler) {
+				margin-top: 0.5em;
+			}
+
+			@include breakpoint(walker) {
+				margin-top: 0;
+			}
+		}
+	}
+
+	.search-filters {
+
+		&.has-filters {
+			margin-top: 0.5em;
+
+			@include breakpoint(walker) {
+				margin-top: 0;
+			}
+		}
+
+		.search-filter {
+			display: none;
+			float: left;
+			margin-top: 1px;
+			width: 100%;
+
+			@include breakpoint(walker) {
+				margin-top: 0.75em;
+			}
+		}
+
+		.villas-filter {
+
+			@include breakpoint(walker) {
+				width: 19.2%;
+				width: calc((100% - 2em) / 5);
+			}
+
+			+ .villas-filter {
+
+				@include breakpoint(walker) {
+					margin-left: 1%;
+					margin-left: calc(0.5em);
+				}
+			}
+		}
+
+		.fd-filter {
+
+			@include breakpoint(walker) {
+				width: 19.2%;
+				width: calc((100% - 2em) / 5);
+			}
+
+			+ .fd-filter {
+
+				@include breakpoint(walker) {
+					margin-left: 1%;
+					margin-left: calc(0.5em);
+				}
+			}
+		}
+
+		.activities-filter {
+
+			@include breakpoint(walker) {
+				width: 32.666666667%;
+				width: calc((100% - 1em) / 3);
+			}
+
+			+ .activities-filter {
+
+				@include breakpoint(walker) {
+					margin-left: 1%;
+					margin-left: calc(0.5em);
+				}
+			}
+		}
+	}
+
+	.selecter {
+
+		.selecter-options {
+			border: 0;
+		}
+
+		.selecter-selected {
+			background-color: $tint;
+			border: 0;
+			color: $white;
+
+			&:before {
+				border-top: 6px solid $tint-medium;
+			}
+		}
+
+		.selecter-item {
+			background: $color-500;
+			border-bottom: 1px solid $tint;
+			color: $white;
+
+			&:hover,
+			&:focus {
+				background-color: lighten($color-500, 4%);
+			}
+
+			&.selected {
+				background-color: lighten($color-500, 8%);
+			}
+		}
+	}
+}
+
+.search-form {
+	position: relative;
+
+	&:hover,
+	&:focus {
+
+		input[type="submit"] {
+			opacity: 0.8;
+		}
+	}
+
+	label {
+		display: none;
+	}
+
+	input[type="text"] {
+		padding-right: 100px;
+		width: 100%;
+	}
+
+	input[type="submit"] {
+		background-color: $color-primary;
+		background-image: url("library/images/icon-search.svg");
+		background-position: 6px center;
+		background-repeat: no-repeat;
+		background-size: 18px 18px;
+		border: 0;
+		color: $black;
+		font-size: 14px;
+		height: 100%;
+		padding: 2px 8px 2px 26px;
+		position: absolute;
+		right: 0;
+		top: 0;
+		transition: all 0.2s $ease;
+
+		&:hover,
+		&:focus {
+			opacity: 1;
+		}
+	}
+}

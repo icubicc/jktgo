@@ -1,0 +1,17 @@
+.attachment-section {
+	background-color: $white;
+	border: 1px solid $color-primary;
+	padding: 1em;
+	
+	@include breakpoint(creeper) {
+		padding: 1.5em;
+	}
+	
+	.back-button {
+		margin-bottom: 1.5em;
+	}
+	
+	.attachment-title {
+		margin-bottom: 1.5rem;
+	}
+}
